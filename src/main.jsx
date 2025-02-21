@@ -1,11 +1,17 @@
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-
+import "./app.css";
+import Home from "./pages/Home";
+import About from "./pages/About";
 function App() {
   return (
     <BrowserRouter>
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
+      <header>
+        <Link to="/">#VANLIFE</Link>
+        <nav>
+          <Link to="/about">About</Link>
+        </nav>
+      </header>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -13,11 +19,5 @@ function App() {
     </BrowserRouter>
   );
 }
-function Home() {
-  return <h1>Hello, React Router!</h1>;
-}
 
-function About() {
-  return <h1>About page</h1>;
-}
 createRoot(document.getElementById("root")).render(<App />);
